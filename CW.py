@@ -31,6 +31,7 @@ st.image(logo_let)
 
 st.header("Match Analyzer")
 st.markdown("Artificial Intelligence NBA match predictor")
+st.caption('Created by @maldonavi && @Guiller0701')
 
 
 tm_H=st.sidebar.multiselect("Home Team",Select_H)
@@ -451,7 +452,7 @@ if b:
 
     st.write(urltm_H)
     st.write(urltm_A)
-    st.caption('Created by')
+    
 
 
 
