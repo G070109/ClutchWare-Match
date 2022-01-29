@@ -369,6 +369,8 @@ if b:
     res = rH + rA
     resS = rH + rA + 3.5
     rH = np.asarray(rH[0])
+    rA = np.asarray(rA[0])
+    res = np.asarray(res[0])
 
 
     if res > Bt_ou_line:
@@ -434,8 +436,8 @@ if b:
         fig2.data[i].textposition = 'inside'
 
     m2, m3, m4 = st.columns(3)
-    st.write("\n \n \n")
-    st.write(rH[0],[0])
+    st.write("\n\n\n")
+   
     m2.metric(label=tm_H[0], value=str(np.round(rH[0],3)) , delta="Expected Points", delta_color="off")
     m3.metric(label=tm_A[0], value=str(np.round(rA[0], 3)), delta="Expected Points", delta_color="off")
     m4.metric(label="Total", value=str(np.round(res[0], 3)), delta="Expected Points", delta_color="off")
