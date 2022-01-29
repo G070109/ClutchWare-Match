@@ -368,6 +368,7 @@ if b:
     st.success("Model trained!")
     res = rH + rA
     resS = rH + rA + 3.5
+    rH = np.asarray(rH[0])
 
 
     if res > Bt_ou_line:
