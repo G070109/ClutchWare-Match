@@ -8,10 +8,10 @@ import plotly.graph_objects as go
 import plotly.express as px
 from PIL import Image
 
-
-st.set_page_config(page_title="ClutchWare-Match",page_icon=logo_ic)
 logo_let = Image.open('data//C-La.png')
 logo_ic = Image.open('data//C-L5.png')
+st.set_page_config(page_title="ClutchWare-Match",page_icon=logo_ic)
+
 
 Select_H=["Atlanta Hawks","Brooklyn Nets","Boston Celtics","Charlotte Hornets","Chicago Bulls","Cleveland Cavaliers","Dallas Mavericks","Denver Nuggets",
         "Detroit Pistons","Golden State Warriors","Houston Rockets","Indiana Pacers","Los Angeles Clippers","Los Angeles Lakers","Memphis Grizzlies","Miami Heat",
