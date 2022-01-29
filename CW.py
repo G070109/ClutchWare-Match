@@ -433,7 +433,7 @@ if b:
         fig2.data[i].textposition = 'inside'
 
     m2, m3, m4 = st.columns(3)
-    m2.metric(label=tm_H[0], value=str(np.round(rH[0],3)) , delta="Expected Points", delta_color="off")
+    m2.metric(label=tm_H[0], value=str(np.round(rH[[0]],3)) , delta="Expected Points", delta_color="off")
     m3.metric(label=tm_A[0], value=str(np.round(rA[0], 3)), delta="Expected Points", delta_color="off")
     m4.metric(label="Total", value=str(np.round(res[0], 3)), delta="Expected Points", delta_color="off")
     st.info("Recommended total line -"+t_line)
