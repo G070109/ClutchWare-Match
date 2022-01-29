@@ -703,10 +703,8 @@ if a:
 
     
     with st.spinner("Starting training..."):
-             
-      rH = AI(H_pt, H_Def, Opp_H)
-
-      rA = AI(A_pt, A_Def, Opp_A)
+                rH = AI(H_pt, H_Def, Opp_H)
+                rA = AI(A_pt, A_Def, Opp_A)
     st.success("Model trained!")
     res = rH + rA
     resS = rH + rA + 3.5
