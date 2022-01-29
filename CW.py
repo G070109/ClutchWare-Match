@@ -408,7 +408,7 @@ if b:
     tot_Graph_H = px.bar(H_df_pl, x="N°", y="Total Home",
                  color_discrete_sequence=['#66FCF1', '#45A29E'],
                  title=tm_H[0]+" last total points")
-    tot_Graph_H.add_hline(y=int(res), line_color="#00ECFF", line_width=4)
+    tot_Graph_H.add_hline(y=float(line), line_color="#00ECFF", line_width=4)
     for i, t in enumerate([H_nop]):
         tot_Graph_H.data[i].text = t
         tot_Graph_H.data[i].textposition = 'inside'
@@ -416,7 +416,7 @@ if b:
     tot_Graph_A = px.bar(A_df_pl, x="N°", y="Total Away",
                  color_discrete_sequence=['#66FCF1', '#45A29E'],
                  title=tm_A[0]+" last total points")
-    tot_Graph_A.add_hline(y=int(res), line_color="#00ECFF", line_width=4)
+    tot_Graph_A.add_hline(y=float(line), line_color="#00ECFF", line_width=4)
     for i, t in enumerate([A_nop]):
         tot_Graph_A.data[i].text = t
         tot_Graph_A.data[i].textposition = 'inside'
