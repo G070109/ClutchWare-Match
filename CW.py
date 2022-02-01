@@ -24,7 +24,7 @@ Select_A=["Atlanta Hawks","Brooklyn Nets","Boston Celtics","Charlotte Hornets","
         "Milwaukee Bucks","Minnesota Timberwolves","New Orleans Pelicans","New York Knicks","Oklahoma City Thunder","Orlando Magic","Philadelphia 76ers","Phoenix Suns",
         "Portland Trail Blazers","Sacramento Kings","San Antonio Spurs","Toronto Raptors","Utah Jazz","Washington Wizards"]
 
-Last_G = 8
+Select_Last_Games = [3,5,8,10,15]
 
 
 st.image(logo_let)
@@ -37,6 +37,7 @@ st.caption('Created by @maldonavi  &  @Guiller0701')
 tm_H=st.sidebar.multiselect("Home Team",Select_H)
 tm_A=st.sidebar.multiselect("Away Team",Select_A)
 Bt_ou_line=st.sidebar.text_input("Bet line Over/Under",)
+Last_G=st.sidebar.multiselect('Last Games',Select_Last_Games)
 b=st.sidebar.button("Analyze")
 
 def pick_tm(tm_sl):
@@ -274,8 +275,8 @@ if b:
     df_i_A = df_i_A.dropna(axis=0, subset=['Unnamed: 4'])
     df_i_H = df_i_H.dropna(axis=0, subset=['Unnamed: 4'])
 
-    df_A = df_i_A.iloc[-+Last_G:]
-    df_H = df_i_H.iloc[-+Last_G:]
+    df_A = df_i_A.iloc[-+int(Last_G[0]):]
+    df_H = df_i_H.iloc[-+int(Last_G[0]):]
     df_A = df_A.fillna(0, inplace=False)
     df_H = df_H.fillna(0, inplace=False)
 
