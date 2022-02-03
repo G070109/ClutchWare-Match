@@ -277,8 +277,8 @@ if b:
 
     df_A = df_i_A.iloc[-+int(Last_G[0])-1:]
     df_H = df_i_H.iloc[-+int(Last_G[0])-1:]
-    df_A = df_i_A.iloc[:int(Last_G[0])]
-    df_H = df_i_H.iloc[:int(Last_G[0])]
+    df_A = df_A.iloc[:int(Last_G[0])]
+    df_H = df_H.iloc[:int(Last_G[0])]
     df_A = df_A.fillna(0, inplace=False)
     df_H = df_H.fillna(0, inplace=False)
 
