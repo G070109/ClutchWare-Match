@@ -377,11 +377,11 @@ if b:
 
 
     if res > Bt_ou_line:
-        line = Bt_ou_line - 4.5
+        line = Bt_ou_line - 5
         t_line = str('Over ' + str(line))
 
     else:
-        line = Bt_ou_line + 4.5
+        line = Bt_ou_line + 5
         t_line = str('Under ' + str(line))
 
     if rH > rA:
