@@ -275,8 +275,8 @@ if b:
     df_i_A = df_i_A.dropna(axis=0, subset=['Unnamed: 4'])
     df_i_H = df_i_H.dropna(axis=0, subset=['Unnamed: 4'])
 
-    df_A = df_i_A.iloc[-+int(Last_G[0])-1:]
-    df_H = df_i_H.iloc[-+int(Last_G[0])-1:]
+    df_A = df_i_A.iloc[-+int(Last_G[0])-2:]
+    df_H = df_i_H.iloc[-+int(Last_G[0])-2:]
     df_A = df_A.iloc[:int(Last_G[0])]
     df_H = df_H.iloc[:int(Last_G[0])]
     df_A = df_A.fillna(0, inplace=False)
