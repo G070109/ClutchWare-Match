@@ -25,7 +25,7 @@ Select_A=["Atlanta Hawks","Brooklyn Nets","Boston Celtics","Charlotte Hornets","
         "Portland Trail Blazers","Sacramento Kings","San Antonio Spurs","Toronto Raptors","Utah Jazz","Washington Wizards"]
 
 Select_Last_Games = [3,5,8,10,15]
-
+Select_Opt = ["Adam","Adadelta","Adagrad","Adamax","Nadam","Ftrl"]
 
 st.image(logo_let)
 
@@ -37,7 +37,8 @@ st.caption('Created by @maldonavi  &  @Guiller0701')
 tm_H=st.sidebar.multiselect("Home Team",Select_H)
 tm_A=st.sidebar.multiselect("Away Team",Select_A)
 Bt_ou_line=st.sidebar.text_input("Bet line Over/Under",)
-Last_G= st.sidebar.multiselect("n",Select_Last_Games)
+Last_G= st.sidebar.multiselect("Last Games",Select_Last_Games)
+opt= st.sidebar.multiselect("Optimizer",Select_Opt)
 b=st.sidebar.button("Analyze")
 
 def pick_tm(tm_sl):
@@ -230,7 +231,7 @@ def tmnm(nm1):
   return nm2
 
 
-def AI(tm_pt, tm_av, opp_av):
+def AI(tm_pt, tm_av, opp_av,opt[0]):
     capa = tf.keras.layers.Dense(units=1, input_shape=[1])
     modelo = tf.keras.Sequential([capa])
 
@@ -239,7 +240,7 @@ def AI(tm_pt, tm_av, opp_av):
     salida = tf.keras.layers.Dense(units=1)
     modelo = tf.keras.Sequential([oculta1, oculta2, salida])
     modelo.compile(
-        optimizer=tf.keras.optimizers.Adadelta(0.01),
+        optimizer=tf.keras.optimizers.opt(0.01),
         loss='mean_squared_error'
     )
 
