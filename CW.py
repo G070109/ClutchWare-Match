@@ -233,7 +233,7 @@ def tmnm(nm1):
 
 if opt =="Adam":
    optimizer=tf.keras.optimizers.Adam(0.01)
-else:
+
         
         
 def AI(tm_pt, tm_av, opp_av,opt):
