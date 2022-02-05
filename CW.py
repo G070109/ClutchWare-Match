@@ -39,7 +39,6 @@ tm_A=st.sidebar.multiselect("Away Team",Select_A)
 Bt_ou_line=st.sidebar.text_input("Bet line Over/Under",)
 Last_G= st.sidebar.multiselect("Last Games",Select_Last_Games)
 opt= st.sidebar.multiselect("Optimizer",Select_Opt)
-opt = opt[0]
 b=st.sidebar.button("Analyze")
 
 def pick_tm(tm_sl):
@@ -277,6 +276,7 @@ def AI(tm_pt, tm_av, opp_av):
 if b:
 
     Bt_ou_line = float(Bt_ou_line)
+    opt = opt[0]
 
     urltm_H = ('https://www.basketball-reference.com/teams/' + pick_tm(tm_H[0]) + '/2022_games.html')
 
