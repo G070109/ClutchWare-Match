@@ -241,9 +241,9 @@ elif opt =="Adamax":
 elif opt =="Nadam":
    optimizer=tf.keras.optimizers.Nadam(0.01)
 elif opt =="Ftrl":
-   optimizer=tf.keras.optimizers.Nadam(0.01)
+   optimizer=tf.keras.optimizers.Ftrl(0.01)
 elif opt =="RMSprop":
-   optimizer=tf.keras.optimizers.Nadam(0.01)
+   optimizer=tf.keras.optimizers.RMSprop(0.01)
 
 
         
