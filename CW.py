@@ -230,22 +230,6 @@ def tmnm(nm1):
 
   return nm2
 
-if opt[0] =="Adam":
-   optimizer=tf.keras.optimizers.Adam(0.01)
-elif opt[0] =="Adadelta":
-   optimizer=tf.keras.optimizers.Adadelta(0.01)
-elif opt[0] =="Adagrad":
-   optimizer=tf.keras.optimizers.Adagrad(0.01)
-elif opt[0] =="Adamax":
-   optimizer=tf.keras.optimizers.Adamax(0.01)
-elif opt[0] =="Nadam":
-   optimizer=tf.keras.optimizers.Nadam(0.01)
-elif opt[0] =="Ftrl":
-   optimizer= tf.keras.optimizers.Ftrl(0.01)
-elif opt[0] =="RMSprop":
-   optimizer= tf.keras.optimizers.RMSprop(0.01)
-
-
         
         
 def AI(tm_pt, tm_av, opp_av):
@@ -275,6 +259,22 @@ def AI(tm_pt, tm_av, opp_av):
 if b:
 
     Bt_ou_line = float(Bt_ou_line)
+    
+        
+    if opt[0] =="Adam":
+      optimizer=tf.keras.optimizers.Adam(0.01)
+    elif opt[0] =="Adadelta":
+       optimizer=tf.keras.optimizers.Adadelta(0.01)
+    elif opt[0] =="Adagrad":
+       optimizer=tf.keras.optimizers.Adagrad(0.01)
+    elif opt[0] =="Adamax":
+      optimizer=tf.keras.optimizers.Adamax(0.01)
+    elif opt[0] =="Nadam":
+      optimizer=tf.keras.optimizers.Nadam(0.01)
+    elif opt[0] =="Ftrl":
+      optimizer= tf.keras.optimizers.Ftrl(0.01)
+    elif opt[0] =="RMSprop":
+      optimizer= tf.keras.optimizers.RMSprop(0.01)
    
 
     urltm_H = ('https://www.basketball-reference.com/teams/' + pick_tm(tm_H[0]) + '/2022_games.html')
