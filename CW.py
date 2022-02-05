@@ -231,7 +231,11 @@ def tmnm(nm1):
 
   return nm2
 
-
+if opt =="Adam":
+   optimizer=tf.keras.optimizers.Adam(0.01)
+else:
+        
+        
 def AI(tm_pt, tm_av, opp_av,opt):
     capa = tf.keras.layers.Dense(units=1, input_shape=[1])
     modelo = tf.keras.Sequential([capa])
@@ -241,7 +245,7 @@ def AI(tm_pt, tm_av, opp_av,opt):
     salida = tf.keras.layers.Dense(units=1)
     modelo = tf.keras.Sequential([oculta1, oculta2, salida])
     modelo.compile(
-        optimizer=tf.keras.optimizers(name=opt,0.01),
+        optimizer
         loss='mean_squared_error'
     )
 
