@@ -25,7 +25,7 @@ Select_A=["Atlanta Hawks","Brooklyn Nets","Boston Celtics","Charlotte Hornets","
         "Portland Trail Blazers","Sacramento Kings","San Antonio Spurs","Toronto Raptors","Utah Jazz","Washington Wizards"]
 
 Select_Last_Games = [3,5,8,10,15]
-Select_Opt = ['Adam','Adadelta','Adagrad','Adamax','Nadam','Ftrl']
+Select_Opt = ['Adam','Adadelta','Adagrad','Adamax','Nadam','Ftrl','RMSprop']
 
 st.image(logo_let)
 
@@ -233,10 +233,23 @@ def tmnm(nm1):
 
 if opt =="Adam":
    optimizer=tf.keras.optimizers.Adam(0.01)
+elif opt =="Adadelta":
+   optimizer=tf.keras.optimizers.Adadelta(0.01)
+elif opt =="Adagrad":
+   optimizer=tf.keras.optimizers.Adagrad(0.01)
+elif opt =="Adamax":
+   optimizer=tf.keras.optimizers.Adamax(0.01)
+elif opt =="Nadam":
+   optimizer=tf.keras.optimizers.Nadam(0.01)
+elif opt =="Ftrl":
+   optimizer=tf.keras.optimizers.Nadam(0.01)
+elif opt =="RMSprop":
+   optimizer=tf.keras.optimizers.Nadam(0.01)
+
 
         
         
-def AI(tm_pt, tm_av, opp_av,opt):
+def AI(tm_pt, tm_av, opp_av):
     capa = tf.keras.layers.Dense(units=1, input_shape=[1])
     modelo = tf.keras.Sequential([capa])
 
@@ -372,8 +385,8 @@ if b:
 
     
     with st.spinner("Starting training..."):
-                rH = AI(H_pt, H_Def, Opp_H,opt)
-                rA = AI(A_pt, A_Def, Opp_A,opt)
+                rH = AI(H_pt, H_Def, Opp_H)
+                rA = AI(A_pt, A_Def, Opp_A)
     st.success("Model trained!")
     res = rH + rA
     resS = rH + rA + 3.5
