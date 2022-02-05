@@ -25,7 +25,7 @@ Select_A=["Atlanta Hawks","Brooklyn Nets","Boston Celtics","Charlotte Hornets","
         "Portland Trail Blazers","Sacramento Kings","San Antonio Spurs","Toronto Raptors","Utah Jazz","Washington Wizards"]
 
 Select_Last_Games = [3,5,8,10,15]
-Select_Opt = ['Adam','Adadelta','Adagrad','Adamax','Nadam','Ftrl','RMSprop']
+Select_Opti = ['Adam','Adadelta','Adagrad','Adamax','Nadam','Ftrl','RMSprop']
 
 st.image(logo_let)
 
@@ -38,7 +38,7 @@ tm_H=st.sidebar.multiselect("Home Team",Select_H)
 tm_A=st.sidebar.multiselect("Away Team",Select_A)
 Bt_ou_line=st.sidebar.text_input("Bet line Over/Under",)
 Last_G= st.sidebar.multiselect("Last Games",Select_Last_Games)
-opt= st.sidebar.multiselect("Optimizer",Select_Opt)
+opt= st.sidebar.multiselect("Optimizer",Select_Opti)
 b=st.sidebar.button("Analyze")
 
 def pick_tm(tm_sl):
