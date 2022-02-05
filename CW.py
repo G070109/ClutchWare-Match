@@ -231,7 +231,7 @@ def tmnm(nm1):
   return nm2
 
 if opt[0] =="Adam":
-   optimizer=tf.keras.optimizers.Adam(0.01)
+   optimizer=tf.keras.optimizers.Adam(0.1)
 elif opt[0] =="Adadelta":
    optimizer=tf.keras.optimizers.Adadelta(0.01)
 elif opt[0] =="Adagrad":
