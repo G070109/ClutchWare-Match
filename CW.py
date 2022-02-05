@@ -25,7 +25,7 @@ Select_A=["Atlanta Hawks","Brooklyn Nets","Boston Celtics","Charlotte Hornets","
         "Portland Trail Blazers","Sacramento Kings","San Antonio Spurs","Toronto Raptors","Utah Jazz","Washington Wizards"]
 
 Select_Last_Games = [3,5,8,10,15]
-Select_Opt = [Adam,Adadelta,Adagrad,Adamax,Nadam,Ftrl]
+Select_Opt = ['Adam','Adadelta','Adagrad','Adamax','Nadam','Ftrl']
 
 st.image(logo_let)
 
