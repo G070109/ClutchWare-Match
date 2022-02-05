@@ -230,20 +230,20 @@ def tmnm(nm1):
 
   return nm2
 
-if opt =="Adam":
+if opt[0] =="Adam":
    optimizer=tf.keras.optimizers.Adam(0.01)
-elif opt =="Adadelta":
+elif opt[0] =="Adadelta":
    optimizer=tf.keras.optimizers.Adadelta(0.01)
-elif opt =="Adagrad":
+elif opt[0] =="Adagrad":
    optimizer=tf.keras.optimizers.Adagrad(0.01)
-elif opt =="Adamax":
+elif opt[0] =="Adamax":
    optimizer=tf.keras.optimizers.Adamax(0.01)
-elif opt =="Nadam":
+elif opt[0] =="Nadam":
    optimizer=tf.keras.optimizers.Nadam(0.01)
-elif opt =="Ftrl":
-   optimizer=tf.keras.optimizers.Ftrl(0.01)
-elif opt =="RMSprop":
-   optimizer=tf.keras.optimizers.RMSprop(0.01)
+elif opt[0] =="Ftrl":
+   optimizer= tf.keras.optimizers.Ftrl(0.01)
+elif opt[0] =="RMSprop":
+   optimizer= tf.keras.optimizers.RMSprop(0.01)
 
 
         
@@ -257,8 +257,7 @@ def AI(tm_pt, tm_av, opp_av):
     salida = tf.keras.layers.Dense(units=1)
     modelo = tf.keras.Sequential([oculta1, oculta2, salida])
     modelo.compile(
-        optimizer,
-        loss='mean_squared_error'
+        optimizer, loss='mean_squared_error'
     )
 
     print("Comenzando entrenamiento...")
@@ -276,7 +275,7 @@ def AI(tm_pt, tm_av, opp_av):
 if b:
 
     Bt_ou_line = float(Bt_ou_line)
-    opt = opt[0]
+   
 
     urltm_H = ('https://www.basketball-reference.com/teams/' + pick_tm(tm_H[0]) + '/2022_games.html')
 
