@@ -239,7 +239,7 @@ def AI(tm_pt, tm_av, opp_av):
     salida = tf.keras.layers.Dense(units=1)
     modelo = tf.keras.Sequential([oculta1, oculta2, salida])
     modelo.compile(
-        optimizer=tf.keras.optimizers.RMSprop(0.01),
+        optimizer=tf.keras.optimizers.Adadelta(0.01),
         loss='mean_squared_error'
     )
 
