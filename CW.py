@@ -26,7 +26,7 @@ Select_A=["Atlanta Hawks","Brooklyn Nets","Boston Celtics","Charlotte Hornets","
 
 Select_Last_Games = [3,5,8,10,15]
 Select_Opt = ["Adam","Adadelta","Adagrad","Adamax","Nadam","Ftrl"]
-oot
+
 st.image(logo_let)
 
 st.header("Match Analyzer")
