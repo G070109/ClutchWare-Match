@@ -504,9 +504,9 @@ if b:
     m4.metric(label="Total", value=str(np.round(res[0], 3)), delta="Expected Points", delta_color="off")
     st.info("Recommended total line -"+t_line)
     st.info(Ml)
-    st.info(str(tm_A[0] + "-" AVG_a))
-    st.info(str(tm_H[0] + "-" AVG_h))
-    st.info(str("Total %" + "-" AVG_f))
+    st.info(str(tm_A[0] + "-" +AVG_a))
+    st.info(str(tm_H[0] + "-" +AVG_h))
+    st.info(str("Total %" + "-" +AVG_f))
 
     st.plotly_chart(tot_Graph_H)
     st.plotly_chart(tot_Graph_A)
