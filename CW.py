@@ -505,8 +505,8 @@ if b:
     st.info("Recommended total line -"+t_line)
     st.info(Ml)
     st.info(AVG_a)
-    st.info(AVG_h))
-    st.info(str(AVG_f)
+    st.info(AVG_h)
+    st.info(AVG_f)
 
     st.plotly_chart(tot_Graph_H)
     st.plotly_chart(tot_Graph_A)
