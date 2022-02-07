@@ -266,7 +266,7 @@ def UnPe(tt):
     else:
      AVG_h=AVG_h
 
-    AVG_hf=(AVG_h*100)/Last_G
+    AVG_hf=(AVG_h*100)/int(Last_G)
 
   return AVG_hf
 
@@ -283,7 +283,7 @@ def OvPe(tt):
     else:
      AVG_h=AVG_h
 
-    AVG_hf=(AVG_h*100)/Last_G
+    AVG_hf=(AVG_h*100)/int(Last_G)
 
   return AVG_hf
 
