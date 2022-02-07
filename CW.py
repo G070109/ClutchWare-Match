@@ -254,6 +254,38 @@ def AI(tm_pt, tm_av, opp_av):
     print("Esperado " + str(r))
     return r
 
+def UnPe(tt):
+
+  AVG_h=0
+  for n_H_tot in tt:
+  
+    print(n_H_tot)
+    if n_H_tot <= float(line):
+     AVG_h=AVG_h+1
+
+    else:
+     AVG_h=AVG_h
+
+    AVG_hf=(AVG_h*100)/Last_G
+
+  return AVG_hf
+
+
+def OvPe(tt):
+
+  AVG_h=0
+  for n_H_tot in tt:
+  
+    print(n_H_tot)
+    if n_H_tot >= float(line):
+     AVG_h=AVG_h+1
+
+    else:
+     AVG_h=AVG_h
+
+    AVG_hf=(AVG_h*100)/Last_G
+
+  return AVG_hf
 
 
 
@@ -399,10 +431,14 @@ if b:
     if res > Bt_ou_line:
         line = Bt_ou_line - 5
         t_line = str('Over ' + str(line))
+        AVG_h=OvPe(tot_H)
+        AVG_a=OvPe(tot_H)
 
     else:
         line = Bt_ou_line + 5
         t_line = str('Under ' + str(line))
+        AVG_h=UnPe(tot_H)
+        AVG_a=UnPe(tot_H)
 
     if rH > rA:
 
