@@ -324,7 +324,7 @@ if b:
     Def_pg = pd.read_html(urlT_defc)
     Def_pg = Def_pg[0]
 
-    urlT_Ofc = 'https://www.teamrankings.com/nba/stat/opponent-points-per-game'
+    urlT_Ofc = 'https://www.teamrankings.com/nba/stat/points-per-game'
     Of_pg = pd.read_html(urlT_Ofc)
     Of_pg = Of_pg[0]
         
