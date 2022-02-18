@@ -479,9 +479,9 @@ if b:
     reso = rHo + rAo 
 
         
-    rHd = np.asarray(rH[0])
-    rAd = np.asarray(rA[0])
-    resd = np.asarray(res[0])
+    rHd = np.asarray(rHd[0])
+    rAd = np.asarray(rAd[0])
+    resd = np.asarray(resd[0])
  
     rHo = np.asarray(rHo[0])
     rAo = np.asarray(rAo[0])
