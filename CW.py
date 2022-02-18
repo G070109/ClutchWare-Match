@@ -487,8 +487,8 @@ if b:
     rAo = np.asarray(rAo[0])
     reso = np.asarray(reso[0])
 
-    rH = (rHd+rHo)/2
-    rA = (rAd+rAo)/2
+    rH = (rHd+rAo)/2
+    rA = (rAd+rHo)/2
     res = (resd+reso)/2
     resS = rH + rA + 3.5
 
