@@ -324,6 +324,10 @@ if b:
     Def_pg = pd.read_html(urlT_defc)
     Def_pg = Def_pg[0]
 
+    urlT_Ofc = 'https://www.teamrankings.com/nba/stat/opponent-points-per-game'
+    Of_pg = pd.read_html(urlT_Ofc)
+    Of_pg = Of_pg[0]
+        
     df_i_A = df_i_A.dropna(axis=0, subset=['Unnamed: 4'])
     df_i_H = df_i_H.dropna(axis=0, subset=['Unnamed: 4'])
 
@@ -399,6 +403,28 @@ if b:
         A_Def = np.append(A_Def, [Loc_def_A])
 
     print(A_Def)
+
+
+
+
+#Ofensive
+    for h_nmi, ht in zip(H_nop, H_at):
+
+        h_nm = tmnm(h_nmi)
+
+        if ht == "@":
+            loc = 5
+        else:
+            loc = 6
+
+        H_pos_o = np.where(Of_pg == h_nm)
+        Loc_of_H = Of_pg.iloc[H_pos_o[0], [loc]]
+        Loc_of_H = np.asarray(Loc_of_H)
+        H_Of = np.append(H_Of, [Loc_of_H])
+        st.write(H_Of)
+
+
+
 
     Opp_posH = np.where(Def_pg == tmnm(tm_A[0]))
     Opp_H = Def_pg.iloc[Opp_posH[0], [6]]
