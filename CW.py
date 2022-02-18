@@ -424,8 +424,22 @@ if b:
         Loc_of_H = Of_pg.iloc[H_pos_o[0], [loc]]
         Loc_of_H = np.asarray(Loc_of_H)
         H_Of = np.append(H_Of, [Loc_of_H])
-        st.write(H_Of)
+      
 
+    for a_nmi, at in zip(A_nop, A_at):
+
+        a_nm = tmnm(a_nmi)
+
+        if at == "@":
+            loc = 5
+        else:
+            loc = 6
+
+        A_pos_o = np.where(Of_pg == a_nm)
+        Loc_of_A = Of_pg.iloc[A_pos_o[0], [loc]]
+        Loc_of_A = np.asarray(Loc_of_A)
+        A_Of = np.append(A_Of, [Loc_of_A])
+      
 
 
 
@@ -435,6 +449,14 @@ if b:
 
     Opp_posA = np.where(Def_pg == tmnm(tm_H[0]))
     Opp_A = Def_pg.iloc[Opp_posA[0], [5]]
+        
+        
+    Opp_posHo = np.where(Def_pg == tmnm(tm_H[0]))
+    Opp_Ho = Def_pg.iloc[Opp_posHo[0], [6]]
+        
+    Opp_posAo = np.where(Def_pg == tmnm(tm_H[0]))
+    Opp_Ao = Def_pg.iloc[Opp_posAo[0], [5]]
+        
     print(Opp_A)
 
     H_pt = H_pt.astype(np.int64)
@@ -450,6 +472,8 @@ if b:
     with st.spinner("Starting training..."):
                 rH = AI(H_pt, H_Def, Opp_H)
                 rA = AI(A_pt, A_Def, Opp_A)
+                rHo = AI(H_oppt, H_Of, Opp_Ho)
+                rAo = AI(A_oppt, A_Of, Opp_Ao)
     st.success("Model trained!")
     res = rH + rA
     resS = rH + rA + 3.5
@@ -529,9 +553,14 @@ if b:
     m2, m3, m4 = st.columns(3)
     st.write("\n\n\n")
    
-    m2.metric(label=tm_H[0], value=str(np.round(rH[0],3)) , delta="Expected Points", delta_color="off")
-    m3.metric(label=tm_A[0], value=str(np.round(rA[0], 3)), delta="Expected Points", delta_color="off")
-    m4.metric(label="Total", value=str(np.round(res[0], 3)), delta="Expected Points", delta_color="off")
+    m2.metric(label=tm_H[0], value=str(np.round(rH[0],3)) , delta="Expected maked Points", delta_color="off")
+    m3.metric(label=tm_A[0], value=str(np.round(rA[0], 3)), delta="Expected maked Points", delta_color="off")
+    m4.metric(label="Total", value=str(np.round(res[0], 3)), delta="Expected maked Points", delta_color="off")
+        
+    m2.metric(label=tm_H[0], value=str(np.round(rHo[0],3)) , delta="Expected received Points", delta_color="off")
+    m3.metric(label=tm_A[0], value=str(np.round(rAo[0], 3)), delta="Expected received Points", delta_color="off")
+    m4.metric(label="Total", value=str(np.round(res[0], 3)), delta="Expected received Points", delta_color="off") 
+
     m2.metric(label=tm_H[0], value=str(np.round(AVG_h,3))+" %" , delta="Percentage", delta_color="off")
     m3.metric(label=tm_A[0], value=str(np.round(AVG_a,3))+" %" , delta="Percentage", delta_color="off")
     m4.metric(label="Total", value=str(np.round(AVG_f,3))+" %" , delta="Percentage", delta_color="off")
