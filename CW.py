@@ -371,7 +371,10 @@ if b:
 
     A_Def = np.zeros(0)
     H_Def = np.zeros(0)
-
+    A_Of = np.zeros(0)
+    H_Of = np.zeros(0)
+        
+        
     for h_nmi, ht in zip(H_nop, H_at):
 
         h_nm = tmnm(h_nmi)
