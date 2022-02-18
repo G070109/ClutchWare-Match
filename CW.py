@@ -477,7 +477,7 @@ if b:
     st.success("Model trained!")
     resd = rHd + rAd
     reso = rHo + rAo 
-    resS = rH + rA + 3.5
+
         
     rHd = np.asarray(rH[0])
     rAd = np.asarray(rA[0])
@@ -490,6 +490,7 @@ if b:
     rH = (rHd+rHo)/2
     rA = (rAd+rAo)/2
     res = (resd+reso)/2
+    resS = rH + rA + 3.5
 
     if res > Bt_ou_line:
         line = Bt_ou_line - 5
