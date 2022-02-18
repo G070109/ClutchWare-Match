@@ -451,10 +451,10 @@ if b:
     Opp_A = Def_pg.iloc[Opp_posA[0], [5]]
         
         
-    Opp_posHo = np.where(Def_pg == tmnm(tm_H[0]))
+    Opp_posHo = np.where(Of_pg == tmnm(tm_H[0]))
     Opp_Ho = Def_pg.iloc[Opp_posHo[0], [6]]
         
-    Opp_posAo = np.where(Def_pg == tmnm(tm_H[0]))
+    Opp_posAo = np.where(Of_pg == tmnm(tm_H[0]))
     Opp_Ao = Def_pg.iloc[Opp_posAo[0], [5]]
         
     print(Opp_A)
@@ -476,10 +476,13 @@ if b:
                 rAo = AI(A_oppt, A_Of, Opp_Ao)
     st.success("Model trained!")
     res = rH + rA
+    reso = rHo + rAo 
     resS = rH + rA + 3.5
     rH = np.asarray(rH[0])
     rA = np.asarray(rA[0])
-    res = np.asarray(res[0])
+    rHo = np.asarray(rHo[0])
+    rAo = np.asarray(rAo[0])
+    reso = np.asarray(reso[0])
 
 
     if res > Bt_ou_line:
@@ -559,7 +562,7 @@ if b:
         
     m2.metric(label=tm_H[0], value=str(np.round(rHo[0],3)) , delta="Expected received Points", delta_color="off")
     m3.metric(label=tm_A[0], value=str(np.round(rAo[0], 3)), delta="Expected received Points", delta_color="off")
-    m4.metric(label="Total", value=str(np.round(res[0], 3)), delta="Expected received Points", delta_color="off") 
+    m4.metric(label="Total", value=str(np.round(reso[0], 3)), delta="Expected received Points", delta_color="off") 
 
     m2.metric(label=tm_H[0], value=str(np.round(AVG_h,3))+" %" , delta="Percentage", delta_color="off")
     m3.metric(label=tm_A[0], value=str(np.round(AVG_a,3))+" %" , delta="Percentage", delta_color="off")
