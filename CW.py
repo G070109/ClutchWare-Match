@@ -411,31 +411,31 @@ if b:
 
 
 #Ofensive
-    for h_nmi, ht in zip(H_nop, H_at):
+    for h_nmio, hto in zip(H_nop, H_at):
 
-        h_nm = tmnm(h_nmi)
+        h_nmo = tmnm(h_nmio)
 
-        if ht == "@":
+        if hto == "@":
             loc = 5
         else:
             loc = 6
 
-        H_pos_o = np.where(Of_pg == h_nm)
+        H_pos_o = np.where(Of_pg == h_nmo)
         Loc_of_H = Of_pg.iloc[H_pos_o[0], [loc]]
         Loc_of_H = np.asarray(Loc_of_H)
         H_Of = np.append(H_Of, [Loc_of_H])
       
 
-    for a_nmi, at in zip(A_nop, A_at):
+    for a_nmio, ato in zip(A_nop, A_at):
 
-        a_nm = tmnm(a_nmi)
+        a_nmo = tmnm(a_nmio)
 
-        if at == "@":
+        if ato == "@":
             loc = 5
         else:
             loc = 6
 
-        A_pos_o = np.where(Of_pg == a_nm)
+        A_pos_o = np.where(Of_pg == a_nmo)
         Loc_of_A = Of_pg.iloc[A_pos_o[0], [loc]]
         Loc_of_A = np.asarray(Loc_of_A)
         A_Of = np.append(A_Of, [Loc_of_A])
@@ -451,7 +451,7 @@ if b:
     Opp_A = Def_pg.iloc[Opp_posA[0], [5]]
         
         
-    Opp_posHo = np.where(Of_pg == tmnm(tm_H[0]))
+    Opp_posHo = np.where(Of_pg == tmnm(tm_A[0]))
     Opp_Ho = Def_pg.iloc[Opp_posHo[0], [6]]
         
     Opp_posAo = np.where(Of_pg == tmnm(tm_H[0]))
@@ -478,8 +478,11 @@ if b:
     res = rH + rA
     reso = rHo + rAo 
     resS = rH + rA + 3.5
+        
     rH = np.asarray(rH[0])
     rA = np.asarray(rA[0])
+    res = np.asarray(res[0])
+ 
     rHo = np.asarray(rHo[0])
     rAo = np.asarray(rAo[0])
     reso = np.asarray(reso[0])
