@@ -567,13 +567,13 @@ if b:
     m3.metric(label=tm_A[0], value=str(np.round(rA[0], 3)), delta="Expected Points", delta_color="off")
     m4.metric(label="Total", value=str(np.round(res[0], 3)), delta="Expected Points", delta_color="off")
         
-    m2.metric(label=tm_H[0], value=str(np.round(rHd[0],3)) , delta="Expected maked Points", delta_color="off")
-    m3.metric(label=tm_A[0], value=str(np.round(rAd[0], 3)), delta="Expected maked Points", delta_color="off")
-    m4.metric(label="Total", value=str(np.round(resd[0], 3)), delta="Expected maked Points", delta_color="off") 
+    m2.metric(label=tm_H[0], value=str(np.round(rHd[0],3)) , delta="Expected points to make", delta_color="off")
+    m3.metric(label=tm_A[0], value=str(np.round(rAd[0], 3)), delta="Expected points to make", delta_color="off")
+    m4.metric(label="Total", value=str(np.round(resd[0], 3)), delta="Expected points to make", delta_color="off") 
 
-    m2.metric(label=tm_H[0], value=str(np.round(rHo[0],3)) , delta="Expected received Points", delta_color="off")
-    m3.metric(label=tm_A[0], value=str(np.round(rAo[0], 3)), delta="Expected received Points", delta_color="off")
-    m4.metric(label="Total", value=str(np.round(reso[0], 3)), delta="Expected received Points", delta_color="off") 
+    m2.metric(label=tm_H[0], value=str(np.round(rHo[0],3)) , delta="Expected points to receive", delta_color="off")
+    m3.metric(label=tm_A[0], value=str(np.round(rAo[0], 3)), delta="Expected points to receive", delta_color="off")
+    m4.metric(label="Total", value=str(np.round(reso[0], 3)), delta="Expected points to receive", delta_color="off") 
         
     m2.metric(label=tm_H[0], value=str(np.round(AVG_h,3))+" %" , delta="Percentage", delta_color="off")
     m3.metric(label=tm_A[0], value=str(np.round(AVG_a,3))+" %" , delta="Percentage", delta_color="off")
