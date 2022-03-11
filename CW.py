@@ -37,10 +37,11 @@ st.caption('Created by @maldonavi  &  @Guiller0701')
 
 tm_H=st.sidebar.multiselect("Home Team",Select_H)
 tm_A=st.sidebar.multiselect("Away Team",Select_A)
-Bt_ou_line=st.sidebar.text_input("Bet line Over/Under",)
+Bt_ou_line=st.sidebar.text_input("Bet total line Over/Under",)
 #Last_G= st.sidebar.multiselect("Last Games",Select_Last_Games)
 Last_G=st.sidebar.text_input("Last Games",)
-opt= st.sidebar.multiselect("Optimizer",Select_Opti)
+#opt= st.sidebar.multiselect("Optimizer",Select_Opti)
+opt= 'Adam'
 b=st.sidebar.button("Analyze")
 
 def pick_tm(tm_sl):
