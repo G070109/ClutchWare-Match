@@ -315,7 +315,7 @@ if b:
     urltm_H = ('https://www.basketball-reference.com/teams/' + pick_tm(tm_H[0]) + '/2022_games.html')
 
     df_i_H = pd.read_html(urltm_H, header=0)
-    df_i_H = df_i_H[0]
+    df_i_H = df_i_H[1]
     
     urltm_A = ('https://www.basketball-reference.com/teams/' + pick_tm(tm_A[0]) + '/2022_games.html')
     df_i_A = pd.read_html(urltm_A, header=0)
