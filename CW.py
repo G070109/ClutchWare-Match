@@ -312,12 +312,12 @@ if b:
       optimizer= tf.keras.optimizers.RMSprop(0.01)
    
 
-    urltm_H = ('https://www.basketball-reference.com/teams/' + pick_tm(tm_H[0]) + '/2022_games.html')
+    urltm_H = ('https://www.basketball-reference.com/teams/' + pick_tm(tm_H[0]) + '/2023_games.html')
 
     df_i_H = pd.read_html(urltm_H, header=0)
     df_i_H = df_i_H[1]
     
-    urltm_A = ('https://www.basketball-reference.com/teams/' + pick_tm(tm_A[0]) + '/2022_games.html')
+    urltm_A = ('https://www.basketball-reference.com/teams/' + pick_tm(tm_A[0]) + '/2023_games.html')
     df_i_A = pd.read_html(urltm_A, header=0)
     df_i_A = df_i_A[1]
 
