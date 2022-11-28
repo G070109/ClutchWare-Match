@@ -42,6 +42,7 @@ Bt_ou_line=st.sidebar.text_input("Bet total line Over/Under",)
 Last_G=st.sidebar.text_input("Last Games",)
 #opt= st.sidebar.multiselect("Optimizer",Select_Opti)
 opt= ['Adam']
+ps = st.sidebar.text_input("Pass")
 b=st.sidebar.button("Analyze")
 
 def pick_tm(tm_sl):
