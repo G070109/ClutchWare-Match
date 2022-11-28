@@ -292,7 +292,7 @@ def OvPe(tt):
 
 
 
-if b:
+if b && ps=="wsa":
 
     Bt_ou_line = float(Bt_ou_line)
     
