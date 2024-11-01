@@ -472,6 +472,9 @@ if b and ps=="wsa":
 
     
     with st.spinner("Starting training..."):
+                print(A_pt)
+                print(A_Def)
+                print(Opp_A)
                 rHd = AI(H_pt, H_Def, Opp_H)
                 rAd = AI(A_pt, A_Def, Opp_A)
                 rHo = AI(H_oppt, H_Of, Opp_Ho)
