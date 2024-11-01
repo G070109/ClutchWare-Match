@@ -477,7 +477,7 @@ if b and ps=="wsa":
     
     with st.spinner("Starting training..."):
               
-                rHd = AI(np.array([1, 2, 3]),np.array([2,4,6]),np.array([100])
+                rHd = AI(np.array([1, 2, 3]),np.array([2,4,6]),np.array([100]))
                 rAd = AI(A_pt, A_Def, Opp_A)
                 rHo = AI(H_oppt, H_Of, Opp_Ho)
                 rAo = AI(A_oppt, A_Of, Opp_Ao)
