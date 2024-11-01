@@ -464,9 +464,13 @@ if b and ps=="wsa":
     H_pt = H_pt.astype(np.int64)
     A_pt = A_pt.astype(np.int64)
     
-
-
-
+    st.write(H_pt)
+    st.write(H_Def)
+    st.write(Opp_H)
+    st.write("2")
+    st.write(A_pt)
+    st.write(A_Def)
+    st.write(Opp_A)
 
 
 
