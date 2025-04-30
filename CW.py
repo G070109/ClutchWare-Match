@@ -238,18 +238,20 @@ def tmnm(nm1):
         
         
 def AI(tm_av, tm_pt, tm_new):
-    # Convertir datos a tipo float32 para evitar problemas de tipo
+    tf.keras.backend.clear_session()  # importante para evitar errores del scope
+
+    # Convertir a float32
     tm_av = np.array(tm_av, dtype=np.float32)
     tm_pt = np.array(tm_pt, dtype=np.float32)
     tm_new = np.array(tm_new, dtype=np.float32)
 
-    # Crear un nuevo modelo con una nueva instancia de optimizer
+    # Crear modelo
     model = tf.keras.Sequential([
-        tf.keras.Input(shape=(1,)),  # forma correcta de especificar entrada
+        tf.keras.Input(shape=(1,)),
         tf.keras.layers.Dense(3, activation='linear')
     ])
 
-    optimizer = tf.keras.optimizers.Adam()  # nuevo optimizador
+    optimizer = tf.keras.optimizers.Adam()
     model.compile(optimizer=optimizer, loss='mean_squared_error')
 
     print("Comenzando entrenamiento...")
@@ -261,6 +263,7 @@ def AI(tm_av, tm_pt, tm_new):
     print(pred)
 
     return pred
+
 
 def UnPe(tt):
 
