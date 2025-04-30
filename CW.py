@@ -237,27 +237,30 @@ def tmnm(nm1):
 
         
         
-def AI(tm_pt, tm_av, opp_av):
- 
-    capa = tf.keras.layers.Dense(units=1, input_shape=[1])
-    modelo = tf.keras.Sequential([capa])
+def AI(tm_av, tm_pt, tm_new):
+    # Convertir datos a tipo float32 para evitar problemas de tipo
+    tm_av = np.array(tm_av, dtype=np.float32)
+    tm_pt = np.array(tm_pt, dtype=np.float32)
+    tm_new = np.array(tm_new, dtype=np.float32)
 
-    oculta1 = tf.keras.layers.Dense(units=3, input_shape=[1])
-    oculta2 = tf.keras.layers.Dense(units=3)
-    salida = tf.keras.layers.Dense(units=1)
-    modelo = tf.keras.Sequential([oculta1, oculta2, salida])
-    modelo.compile(
-        optimizer, loss='mean_squared_error'
-    )
+    # Crear un nuevo modelo con una nueva instancia de optimizer
+    model = tf.keras.Sequential([
+        tf.keras.Input(shape=(1,)),  # forma correcta de especificar entrada
+        tf.keras.layers.Dense(3, activation='linear')
+    ])
+
+    optimizer = tf.keras.optimizers.Adam()  # nuevo optimizador
+    model.compile(optimizer=optimizer, loss='mean_squared_error')
 
     print("Comenzando entrenamiento...")
-    historial = modelo.fit(tm_av, tm_pt, epochs=1000, verbose=False)
+    model.fit(tm_av, tm_pt, epochs=1000, verbose=False)
     print("Modelo entrenado!")
 
     print("Prediccion")
-    r = modelo.predict(opp_av)
-    print("Esperado " + str(r))
-    return r
+    pred = model.predict(tm_new)
+    print(pred)
+
+    return pred
 
 def UnPe(tt):
 
