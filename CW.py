@@ -507,7 +507,7 @@ if b and ps=="wsa":
     res = (resd+reso)/2
     resS = rH + rA + 3.5
 
-    if res > Bt_ou_line:
+    if np.mean(res) > Bt_ou_line::
         line = Bt_ou_line - 5
         t_line = str('Over ' + str(line))
         AVG_h=OvPe(tot_H)
@@ -521,7 +521,7 @@ if b and ps=="wsa":
     
     AVG_f=(AVG_h+AVG_a)/2
 
-    if rH > rA:
+    if np.mean(rH) > np.mean(rA):
 
         Ml = str(tm_H[0] + " is expected to win")
 
