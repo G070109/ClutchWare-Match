@@ -479,7 +479,8 @@ if b and ps=="wsa":
     st.write(A_pt)
     st.write(A_Def)
     st.write(Opp_A)
-
+    st.write(tm_av)    
+    st.write(tm_pt)   
 
 
     
