@@ -482,10 +482,10 @@ if b and ps=="wsa":
     
     with st.spinner("Starting training..."):
               
-                rHd = AI(np.array([1, 2, 3]),np.array([2,4,6]),np.array([100]))
-                rAd = AI(np.array([1, 2, 3]),np.array([2,4,6]),np.array([100]))
-                rHo = AI(np.array([1, 2, 3]),np.array([2,4,6]),np.array([100]))
-                rAo = AI(np.array([1, 2, 3]),np.array([2,4,6]),np.array([100]))
+                rHd = AI(H_pt,H_Def,Opp_A)
+                rAd = AI(A_pt,A_Def,Opp_H)
+                rHo = AI(H_pt,H_Def,Opp_H)
+                rAo = AI(A_pt,A_Def,Opp_A)
     st.success("Model trained!")
     resd = rHd + rAd
     reso = rHo + rAo 
