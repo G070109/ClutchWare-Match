@@ -237,6 +237,8 @@ def tmnm(nm1):
         
         
 def AI(tm_pt, tm_av, opp_av):
+    tm_av = tm_av.reshape(-1, 1)
+    tm_pt = tm_pt.reshape(-1, 1)
     capa = tf.keras.layers.Dense(units=1, input_shape=[1])
     modelo = tf.keras.Sequential([capa])
 
