@@ -507,7 +507,7 @@ if b and ps=="wsa":
     res = (resd+reso)/2
     resS = rH + rA + 3.5
 
-    if np.mean(res) > Bt_ou_line::
+    if np.mean(res) > Bt_ou_line:
         line = Bt_ou_line - 5
         t_line = str('Over ' + str(line))
         AVG_h=OvPe(tot_H)
